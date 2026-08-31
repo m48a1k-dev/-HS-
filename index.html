@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관세사 진로 및 실무 체험 허브</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #090d16, #1e1b4b);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            touch-action: manipulation;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tab-btn.active {
+            background: linear-gradient(to right, #3b82f6, #6366f1);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 md:p-8">
+
+    <header class="text-center mb-6 max-w-4xl w-full">
+        <div class="inline-block px-3.5 py-1 mb-2 text-xs font-semibold text-blue-400 bg-blue-950/80 rounded-full border border-blue-800">
+            ⚖️ 고등학교 진로·직무 탐색 수행평가 최종 포트폴리오
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 tracking-wide">
+            관세사 진로·실무 체험 및 HS코드·메모리 게임 허브
+        </h1>
+        <p class="text-slate-400 text-sm mt-2">
+            HS 코드 품목분류, 관세 계산, 야간 항만 미니게임부터 무역 메모리 카드 매치 스테이지 게임까지 한번에!
+        </p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex flex-wrap justify-center gap-2 mb-6 w-full max-w-5xl">
+        <button onclick="switchTab('career')" id="btn-career" class="tab-btn active px-3.5 py-2.5 rounded-xl font-bold text-xs md:text-sm border border-slate-700 bg-slate-800 text-slate-300 transition hover:bg-slate-700">
+            💼 진로 가이드
+        </button>
+        <button onclick="switchTab('calc')" id="btn-calc" class="tab-btn px-3.5 py-2.5 rounded-xl font-bold text-xs md:text-sm border border-slate-700 bg-slate-800 text-slate-300 transition hover:bg-slate-700">
+            💰 관세·부가세 계산기
+        </button>
+        <button onclick="switchTab('hscode')" id="btn-hscode" class="tab-btn px-3.5 py-2.5 rounded-xl font-bold text-xs md:text-sm border border-slate-700 bg-slate-800 text-slate-300 transition hover:bg-slate-700">
+            📦 HS코드 품목분류 실습
+        </button>
+        <button onclick="switchTab('memory')" id="btn-memory" class="tab-btn px-3.5 py-2.5 rounded-xl font-bold text-xs md:text-sm border border-slate-700 bg-slate-800 text-slate-300 transition hover:bg-slate-700">
+            🧠 무역 메모리 카드 스테이지
+        </button>
+        <button onclick="switchTab('game')" id="btn-game" class="tab-btn px-3.5 py-2.5 rounded-xl font-bold text-xs md:text-sm border border-slate-700 bg-slate-800 text-slate-300 transition hover:bg-slate-700">
+            🌙 야간 항만 컨테이너 게임
+        </button>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-4xl glass-panel rounded-2xl p-6 md:p-8 shadow-2xl">
+
+        <!-- TAB 1: Career Guide -->
+        <section id="tab-career" class="space-y-6">
+            <h2 class="text-2xl font-black text-blue-400 flex items-center gap-2">
+                🌟 관세사(Customs Broker) 진로 및 역량 심층 가이드
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+                관세사는 국가 간 무역에서 화물이 원활하고 적법하게 통관되도록 돕는 최고 권위의 무역·세법 전문 자격사입니다. 글로벌 공급망의 다변화와 초저가 해외 직구(C-commerce)의 급성장으로 그 역할과 중요성이 날로 커지고 있습니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700 space-y-2">
+                    <h3 class="font-bold text-indigo-300 text-sm">📋 핵심 업무 및 최근 트렌드</h3>
+                    <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                        <li><b>수출입 통관 대행 및 세관 적법성 검토</b></li>
+                        <li><b>HS 코드 품목분류:</b> 관세율 및 요건 판정의 핵심</li>
+                        <li><b>FTA 및 관세 환급 컨설팅:</b> 기업 수출 경쟁력 강화</li>
+                        <li><b>최신 트렌드:</b> C-commerce 직구 물량 폭증에 따른 스마트 통관 및 AI 세관 검사 체계 대응</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700 space-y-2">
+                    <h3 class="font-bold text-emerald-300 text-sm">🎯 관세사의 핵심 역량과 필요 과목</h3>
+                    <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                        <li><b>논리적 분석력:</b> 수만 가지 품목 중 정확한 HS코드를 찾아내는 분석적 사고</li>
+                        <li><b>글로벌 커뮤니케이션:</b> 무역 계약 및 해외 바이어 소통을 위한 외국어 역량</li>
+                        <li><b>고교 추천 과목:</b> 사회·문화, 경제, 정치와 법, 영어 회화 및 독해</li>
+                        <li><b>시험 제도:</b> 1차(객관식-관세법, 무역영어, 회계 등) / 2차(논술형-관세율표, 관세평가, 무역실무)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- High School Recommended Activity Roadmap -->
+            <div class="bg-slate-800/80 p-5 rounded-2xl border border-blue-500/30 space-y-3">
+                <h3 class="font-bold text-blue-300 text-sm flex items-center gap-2">
+                    🚀 고교 시절 추천 활동 및 세특 연계 로드맵
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-700 space-y-1.5">
+                        <span class="text-[11px] font-bold text-amber-400 block">1학년: 진로 탐색 및 기초</span>
+                        <p class="text-xs text-slate-300 leading-snug">무역의 기본 구조와 국가 간 수출입 교역 흐름 조사. 경제 교과와 연계하여 환율 변동이 수입 물품 가격에 미치는 영향 보고서 작성.</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-700 space-y-1.5">
+                        <span class="text-[11px] font-bold text-indigo-400 block">2학년: 사회·경제 융합</span>
+                        <p class="text-xs text-slate-300 leading-snug">FTA(자유무역협정) 체결이 국내 산업에 미치는 명과 암 분석. 사회·문화 수행평가에서 글로벌 공급망 붕괴와 관세사의 역할 탐구.</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-700 space-y-1.5">
+                        <span class="text-[11px] font-bold text-emerald-400 block">3학년: 심화 탐구 및 포트폴리오</span>
+                        <p class="text-xs text-slate-300 leading-snug">C-commerce 확산에 따른 통관 안전성 검증 및 관세 행정 자동화 트렌드 주제로 심층 진로 탐구 보고서 발표 및 본 허브 시연.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-gradient-to-r from-blue-950/60 to-indigo-950/60 rounded-xl border border-blue-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h4 class="font-bold text-white text-sm">💡 실무 체험 코너 안내</h4>
+                    <p class="text-xs text-slate-400">배운 내용을 바탕으로 HS코드 품목분류 실습이나 무역 메모리 스테이지 게임을 직접 체험해 보세요!</p>
+                </div>
+                <button onclick="switchTab('hscode')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-lg transition shrink-0">
+                    HS코드 실습 하러가기 →
+                </button>
+            </div>
+        </section>
+
+        <!-- TAB 2: Tariff Calculator -->
+        <section id="tab-section-calc" class="space-y-6 hidden">
+            <h2 class="text-2xl font-black text-emerald-400 flex items-center gap-2">
+                💰 수입물품 관세·부가세 실전 계산기
+            </h2>
+            <p class="text-slate-300 text-sm">
+                해외 직구 또는 수입 물품의 과세가격(CIF 기준)을 입력하고 업종별 관세율을 선택하여 예상 세액을 계산합니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-300">물품 가격 (원화 KRW)</label>
+                    <input type="number" id="calcPrice" value="500000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-300">관세율 유형</label>
+                    <select id="calcDutyRate" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                        <option value="8">일반 공산품 / 의류 (8%)</option>
+                        <option value="13">신발류 (13%)</option>
+                        <option value="8">스마트폰 / 전자기기 (8%)</option>
+                        <option value="20">화장품 / 향수 (20%)</option>
+                        <option value="30">주류 및 기호품 (30%)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="calculateTariff()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 font-bold text-sm rounded-xl text-white transition shadow-lg">
+                관세 및 부가세 산출하기
+            </button>
+
+            <div id="calcResultBox" class="bg-slate-900/90 p-5 rounded-xl border border-slate-700 hidden space-y-3">
+                <h3 class="font-bold text-emerald-400 text-sm border-b border-slate-800 pb-2">📊 세액 산출 명세서</h3>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <span class="text-slate-400">과세가격 (물품가+운임):</span>
+                    <span id="resPrice" class="font-bold text-white text-right">-</span>
+                    <span class="text-slate-400">예상 관세 (Duty):</span>
+                    <span id="resDuty" class="font-bold text-amber-400 text-right">-</span>
+                    <span class="text-slate-400">예상 부가가치세 (VAT 10%):</span>
+                    <span id="resVat" class="font-bold text-indigo-400 text-right">-</span>
+                </div>
+                <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-sm font-black">
+                    <span class="text-slate-200">총 납부할 세액 합계:</span>
+                    <span id="resTotal" class="text-emerald-400 text-lg">-</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: HS Code Classification Practice -->
+        <section id="tab-section-hscode" class="space-y-6 hidden">
+            <h2 class="text-2xl font-black text-amber-400 flex items-center gap-2">
+                📦 수출입 화물 품목분류 (HS Code) 매칭 실습
+            </h2>
+            <p class="text-slate-300 text-sm">
+                관세사의 가장 핵심적이고 전문적인 업무인 <b>HS 코드(Harmonized System Code)</b> 판정 실습입니다. 주어진 물품 설명을 읽고 가장 올바른 6자리 세번부호를 선택하세요! (매번 무작위로 문제가 출제됩니다)
+            </p>
+
+            <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700 space-y-4">
+                <div class="flex justify-between items-center text-xs text-slate-400 font-bold">
+                    <span id="hsProgress">문제 1 / 5</span>
+                    <span id="hsScoreDisplay" class="text-amber-400">획득 점수: 0점</span>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 space-y-2">
+                    <span id="hsItemCategory" class="px-2.5 py-1 bg-amber-950 text-amber-300 rounded text-[11px] font-bold">품목 설명</span>
+                    <h3 id="hsItemDesc" class="font-bold text-white text-base">물품 로딩중...</h3>
+                </div>
+                <div id="hsOptions" class="grid grid-cols-1 gap-2.5"></div>
+                <div id="hsFeedback" class="text-xs font-bold min-h-[3rem]"></div>
+            </div>
+
+            <div id="hsCompleteBox" class="bg-slate-900/90 p-8 rounded-xl border border-slate-700 text-center hidden space-y-4">
+                <h3 class="text-2xl font-black text-amber-400">🎉 HS코드 품목분류 실습 완료!</h3>
+                <p id="hsFinalScore" class="text-slate-300 text-sm">총 점수: 0점</p>
+                <button onclick="initHsQuiz()" class="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 font-bold text-xs text-slate-950 rounded-xl transition">다시 무작위 도전하기</button>
+            </div>
+        </section>
+
+        <!-- TAB 4: Memory Card Game with Stages -->
+        <section id="tab-section-memory" class="space-y-6 hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                <div>
+                    <h2 class="text-2xl font-black text-purple-400 flex items-center gap-2">
+                        🧠 무역·관세 물품 스테이지 메모리 게임
+                    </h2>
+                    <p class="text-slate-300 text-xs md:text-sm">
+                        단계별로 무작위 무역 카드가 배치되는 메모리 카드 매치 스테이지!
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1.5 bg-purple-950 text-purple-300 rounded-xl text-xs font-bold border border-purple-800" id="memoryStageDisplay">STAGE 1</span>
+                    <div class="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-700 text-xs font-bold text-purple-300">
+                        시도: <span id="memoryTries" class="text-white">0</span>회 | 남은쌍: <span id="memoryPairsLeft" class="text-emerald-400">3</span>쌍
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage Select Menu -->
+            <div id="memoryStageMenu" class="bg-slate-900/90 p-6 rounded-2xl border border-slate-700 text-center space-y-4">
+                <h3 class="text-xl font-bold text-white">도전할 스테이지를 선택하세요 (매판 랜덤 카드 배치)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-lg mx-auto">
+                    <button onclick="startMemoryStage(1)" class="p-4 bg-slate-800 hover:bg-slate-700 border border-purple-500/50 rounded-xl transition text-left space-y-1">
+                        <span class="text-xs font-bold text-purple-400 block">STAGE 1</span>
+                        <span class="text-sm font-bold text-white block">입문 (3쌍 - 6장)</span>
+                        <span class="text-[10px] text-slate-400 block">기본 무역 물품 (무작위)</span>
+                    </button>
+                    <button onclick="startMemoryStage(2)" class="p-4 bg-slate-800 hover:bg-slate-700 border border-purple-500/50 rounded-xl transition text-left space-y-1">
+                        <span class="text-xs font-bold text-purple-400 block">STAGE 2</span>
+                        <span class="text-sm font-bold text-white block">중급 (4쌍 - 8장)</span>
+                        <span class="text-[10px] text-slate-400 block">세관 검사 및 서류 (무작위)</span>
+                    </button>
+                    <button onclick="startMemoryStage(3)" class="p-4 bg-slate-800 hover:bg-slate-700 border border-purple-500/50 rounded-xl transition text-left space-y-1">
+                        <span class="text-xs font-bold text-purple-400 block">STAGE 3</span>
+                        <span class="text-sm font-bold text-white block">상급 (6쌍 - 12장)</span>
+                        <span class="text-[10px] text-slate-400 block">종합 무역·관세 마스터 (무작위)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Board Container -->
+            <div id="memoryGamePlayArea" class="hidden space-y-4">
+                <div id="memoryGameContainer" class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-w-xl mx-auto py-2">
+                    <!-- Cards generated dynamically -->
+                </div>
+
+                <!-- Card Info Popup Box -->
+                <div id="memoryInfoBox" class="bg-slate-900/95 p-5 rounded-2xl border border-purple-500 max-w-md mx-auto hidden space-y-2">
+                    <div class="flex justify-between items-center">
+                        <h4 id="memoryInfoTitle" class="font-bold text-purple-300 text-sm">카드 실무 정보</h4>
+                        <button onclick="closeMemoryInfo()" class="text-xs text-slate-400 hover:text-white">닫기 ✕</button>
+                    </div>
+                    <p id="memoryInfoDesc" class="text-xs text-slate-200 leading-relaxed"></p>
+                </div>
+            </div>
+
+            <div id="memoryWinBox" class="bg-slate-900/90 p-6 rounded-2xl border border-slate-700 text-center hidden space-y-4 max-w-md mx-auto">
+                <h3 class="text-2xl font-black text-purple-400">🏆 스테이지 클리어!</h3>
+                <p id="memoryWinText" class="text-slate-300 text-xs">모든 무역 물품 짝을 맞추셨습니다!</p>
+                <div class="flex gap-2 justify-center">
+                    <button onclick="nextMemoryStage()" id="nextStageBtn" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-500 font-bold text-xs text-white rounded-xl transition">
+                        다음 스테이지 →
+                    </button>
+                    <button onclick="resetMemoryToMenu()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 font-bold text-xs text-slate-300 rounded-xl transition">
+                        스테이지 목록
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: Night Port Container Minigame -->
+        <section id="tab-section-game" class="space-y-6 hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                <div>
+                    <h2 class="text-2xl font-black text-cyan-400 flex items-center gap-2">
+                        🌙 야간 항만 컨테이너 분류 스피드 미니게임
+                    </h2>
+                    <p class="text-slate-300 text-xs md:text-sm">
+                        밤낮없이 돌아가는 항만 보세구역! 무작위로 출현하는 밀려드는 컨테이너를 올바른 구역으로 빠르게 분류하세요!
+                    </p>
+                </div>
+                <div class="bg-slate-900 px-4 py-2 rounded-xl border border-slate-700 text-xs font-bold text-cyan-300">
+                    점수: <span id="gameScore" class="text-white text-sm">0</span>점 | 남은시간: <span id="gameTimer" class="text-rose-400 text-sm">30</span>초
+                </div>
+            </div>
+
+            <div id="gameStartScreen" class="bg-slate-900/90 p-8 rounded-2xl border border-slate-700 text-center space-y-4">
+                <div class="text-4xl">🚢📦🌙</div>
+                <h3 class="text-xl font-bold text-white">야간 통관 총괄 책임자 체험 (매번 랜덤 출현)</h3>
+                <p class="text-xs text-slate-400 max-w-md mx-auto">
+                    화물 정보를 보고 올바른 분류 버튼을 제한 시간 내에 클릭하여 정확히 처리하세요!
+                </p>
+                <button onclick="startNightGame()" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-sm rounded-xl transition shadow-lg">
+                    야간 근무 시작하기 🚀
+                </button>
+            </div>
+
+            <div id="gamePlayArea" class="bg-slate-900/90 p-6 rounded-2xl border border-slate-700 hidden space-y-6 text-center">
+                <div id="cargoCard" class="bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-inner max-w-md mx-auto space-y-2">
+                    <span id="cargoTypeTag" class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs font-bold">수입 화물</span>
+                    <h3 id="cargoName" class="text-xl font-black text-white pt-2">전자제품 부품 세트</h3>
+                    <p id="cargoDesc" class="text-xs text-slate-400">인천항 제1부호 하역완료 / 세관 검사 대기중</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 max-w-md mx-auto">
+                    <button onclick="handleGameChoice(0)" class="py-4 bg-blue-600 hover:bg-blue-500 font-bold text-xs md:text-sm text-white rounded-xl shadow transition">
+                        📦 수입 통관
+                    </button>
+                    <button onclick="handleGameChoice(1)" class="py-4 bg-emerald-600 hover:bg-emerald-500 font-bold text-xs md:text-sm text-white rounded-xl shadow transition">
+                        🚢 수출 선적
+                    </button>
+                    <button onclick="handleGameChoice(2)" class="py-4 bg-rose-600 hover:bg-rose-500 font-bold text-xs md:text-sm text-white rounded-xl shadow transition">
+                        ⚠️ 위험물/보세
+                    </button>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="bg-slate-900/90 p-8 rounded-2xl border border-slate-700 text-center hidden space-y-4">
+                <h3 class="text-2xl font-black text-cyan-400">🌙 야간 근무 종료!</h3>
+                <p id="finalGameScore" class="text-slate-300 text-sm">획득한 항만 실무 포인트: 0점</p>
+                <button onclick="startNightGame()" class="px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 font-bold text-xs text-slate-950 rounded-xl transition">
+                    다시 근무하기
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-500">
+        <p>© 2026 Customs Broker Career Hub & Performance Assessment Portfolio. 성공적인 발표를 응원합니다!</p>
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('tab-career').classList.add('hidden');
+            document.getElementById('tab-section-calc').classList.add('hidden');
+            document.getElementById('tab-section-hscode').classList.add('hidden');
+            document.getElementById('tab-section-memory').classList.add('hidden');
+            document.getElementById('tab-section-game').classList.add('hidden');
+
+            if (tabName === 'career') {
+                document.getElementById('btn-career').classList.add('active');
+                document.getElementById('tab-career').classList.remove('hidden');
+            } else if (tabName === 'calc') {
+                document.getElementById('btn-calc').classList.add('active');
+                document.getElementById('tab-section-calc').classList.remove('hidden');
+            } else if (tabName === 'hscode') {
+                document.getElementById('btn-hscode').classList.add('active');
+                document.getElementById('tab-section-hscode').classList.remove('hidden');
+                initHsQuiz();
+            } else if (tabName === 'memory') {
+                document.getElementById('btn-memory').classList.add('active');
+                document.getElementById('tab-section-memory').classList.remove('hidden');
+                resetMemoryToMenu();
+            } else if (tabName === 'game') {
+                document.getElementById('btn-game').classList.add('active');
+                document.getElementById('tab-section-game').classList.remove('hidden');
+            }
+        }
+
+        // Tariff Calculator Logic
+        function calculateTariff() {
+            let price = parseFloat(document.getElementById("calcPrice").value) || 0;
+            let dutyRate = parseFloat(document.getElementById("calcDutyRate").value) / 100;
+
+            let duty = price * dutyRate;
+            let vat = (price + duty) * 0.1;
+            let total = duty + vat;
+
+            document.getElementById("calcResultBox").classList.remove("hidden");
+            document.getElementById("resPrice").innerText = price.toLocaleString() + " 원";
+            document.getElementById("resDuty").innerText = duty.toLocaleString() + " 원";
+            document.getElementById("resVat").innerText = vat.toLocaleString() + " 원";
+            document.getElementById("resTotal").innerText = total.toLocaleString() + " 원";
+        }
+
+        // HS Code Quiz Database with Expanded Pool for True Randomization
+        const masterHsQuizPool = [
+            {
+                item: "스마트폰용 리튬이온 충전식 배터리 팩",
+                category: "전기기기 및 부품류",
+                options: [
+                    { code: "8507.60", name: "리튬이온 축전지", correct: true, reason: "정답입니다! 8507호는 축전지(배터리)를 분류하며, 그중 60 세번부호는 리튬이온 전지를 정확히 지칭합니다." },
+                    { code: "8517.12", name: "휴대전화기", correct: false, reason: "오답입니다! 8517호는 스마트폰 등 전화기 및 통신 기기를 분류하는 번호로, 배터리 단일 품목이 아닌 기기 본체에 해당합니다." },
+                    { code: "8504.40", name: "정류기 및 전원 공급장치", correct: false, reason: "오답입니다! 8504호는 전압을 변환하는 변압기나 정류기, 전원 공급장치(어댑터 등)를 위한 분류입니다." }
+                ]
+            },
+            {
+                item: "면 100% 남성용 직기 셔츠 (Casual Shirt)",
+                category: "섬유 및 의류류",
+                options: [
+                    { code: "6205.20", name: "면제 남성용 셔츠", correct: true, reason: "정답입니다! 제62류는 직조 의류(직기)를 의미하며, 6205호는 남성용 셔츠, 그 안의 .20은 면 소재 제품을 뜻합니다." },
+                    { code: "6109.10", name: "면제 T셔츠 및 메리야스", correct: false, reason: "오답입니다! 제61류는 편물(니트) 의류를 분류하므로 직기(우븐)로 만든 셔츠는 제62류로 분류해야 합니다." },
+                    { code: "6203.42", name: "면제 남성용 바지", correct: false, reason: "오답입니다! 6203호는 남성용 수트 및 바지(트로저스) 등을 분류하는 번호로 상의인 셔츠와는 다릅니다." }
+                ]
+            },
+            {
+                item: "기능성 스킨케어 화장품 (기초 로션 및 크림)",
+                category: "화장품 및 화학제품",
+                options: [
+                    { code: "3304.99", name: "미용용·메이크업용 제품", correct: true, reason: "정답입니다! 제3304호는 미용, 메이크업 또는 스킨케어용 제품(기초 화장품 포함)을 정확히 분류합니다." },
+                    { code: "3303.00", name: "향수 및 화장수", correct: false, reason: "오답입니다! 3303호는 향수(Perfumes) 및 오드뚜왈렛 등의 향수류를 위한 분류입니다." },
+                    { code: "3401.11", name: "비누 및 유기 계면활성제", correct: false, reason: "오답입니다! 3401호는 비누, 세제 및 목욕용 제제 등을 분류하는 곳으로 기초 스킨케어 크림과는 다릅니다." }
+                ]
+            },
+            {
+                item: "자동 자료처리용 휴대용 디지털 컴퓨터 (노트북 PC)",
+                category: "컴퓨터 및 전자기기",
+                options: [
+                    { code: "8471.30", name: "휴대용 디지털 자동자료처리기계", correct: true, reason: "정답입니다! 8471호는 컴퓨터 및 주변기기를 분류하며, .30 세번은 무게 10kg 이하의 휴대용 노트북 컴퓨터를 뜻합니다." },
+                    { code: "8471.41", name: "기타 디지털 처리 시스템", correct: false, reason: "오답입니다! 이 번호는 시스템 단위로 구성된 대형 고정식 자동자료처리기계나 서버용 시스템에 주로 적용됩니다." },
+                    { code: "8528.52", name: "모니터", correct: false, reason: "오답입니다! 8528호는 모니터 및 프로젝터 등 영상 표시장치를 위한 번호입니다." }
+                ]
+            },
+            {
+                item: "알루미늄 캔에 담긴 탄산음료 (과일향 첨가)",
+                category: "식품 및 음료류",
+                options: [
+                    { code: "2202.10", name: "설탕 등 감미료가 첨가된 음료", correct: true, reason: "정답입니다! 2202호는 물에 설탕이나 감미료, 향료를 첨가한 탄산음료 및 비알코올 음료를 분류합니다." },
+                    { code: "2009.90", name: "과실즙 또는 채소즙", correct: false, reason: "오답입니다! 제2009호는 발효시키지 않은 순수 과실 주스나 채소 주스 원액 위주로 분류됩니다." },
+                    { code: "2201.10", name: "광천수 및 탄산수", correct: false, reason: "오답입니다! 2201호는 당분이나 향료가 전혀 첨가되지 않은 천연 광천수나 순수 탄산수를 뜻합니다." }
+                ]
+            },
+            {
+                item: "가정용 전기 청소기 (진공 흡입식)",
+                category: "가전제품류",
+                options: [
+                    { code: "8508.11", name: "진공청소기 (출력 1,500W 이하)", correct: true, reason: "정답입니다! 8508호는 진공청소기를 분류하며, 가정용 소형 모델은 .11 세번부호에 정확히 해당합니다." },
+                    { code: "8509.80", name: "기타 가정용 전기기기", correct: false, reason: "오답입니다! 8509호는 청소기 외의 가정용 전기기기(믹서기, 식품가공기 등)를 주로 다룹니다." },
+                    { code: "8450.11", name: "전자식 세탁기", correct: false, reason: "오답입니다! 8450호는 의류 세탁기 및 건조기 전용 분류 번호입니다." }
+                ]
+            },
+            {
+                item: "광학식 디지털 카메라 (렌즈 교환식)",
+                category: "광학기기 및 정밀기기",
+                options: [
+                    { code: "9006.51", name: "사진용 카메라 (디지털 포함)", correct: true, reason: "정답입니다! 제9006호는 사진용 카메라를 분류하며 디지털 촬영 기기 및 광학 장치 판정의 기준이 됩니다." },
+                    { code: "9001.30", name: "콘택트렌즈", correct: false, reason: "오답입니다! 9001호는 안경렌즈 및 콘택트렌즈, 광학 유리제품을 위한 번호입니다." },
+                    { code: "8525.89", name: "기타 텔레비전 카메라 및 캠코더", correct: false, reason: "오답입니다! 방송용 비디오 카메라나 특수 감시용 카메라에 주로 적용되는 세번입니다." }
+                ]
+            }
+        ];
+
+        let currentHsQuiz = [];
+        let currentHsIndex = 0;
+        let hsScore = 0;
+
+        function initHsQuiz() {
+            // Randomize and pick 5 questions every time
+            let shuffled = [...masterHsQuizPool].sort(() => Math.random() - 0.5);
+            currentHsQuiz = shuffled.slice(0, 5);
+            // Randomize options order within each question
+            currentHsQuiz.forEach(q => {
+                q.options.sort(() => Math.random() - 0.5);
+            });
+
+            currentHsIndex = 0;
+            hsScore = 0;
+            document.getElementById("hsCompleteBox").classList.add("hidden");
+            document.querySelector("#tab-section-hscode .space-y-4").style.display = "block";
+            loadHsQuestion();
+        }
+
+        function loadHsQuestion() {
+            if (currentHsIndex >= currentHsQuiz.length) {
+                document.querySelector("#tab-section-hscode .space-y-4").style.display = "none";
+                document.getElementById("hsCompleteBox").classList.remove("hidden");
+                document.getElementById("hsFinalScore").innerText = `총 점수: ${hsScore}점 / ${currentHsQuiz.length * 20}점`;
+                return;
+            }
+
+            let q = currentHsQuiz[currentHsIndex];
+            document.getElementById("hsProgress").innerText = `문제 ${currentHsIndex + 1} / ${currentHsQuiz.length}`;
+            document.getElementById("hsScoreDisplay").innerText = `획득 점수: ${hsScore}점`;
+            document.getElementById("hsItemCategory").innerText = q.category;
+            document.getElementById("hsItemDesc").innerText = q.item;
+            document.getElementById("hsFeedback").innerHTML = "";
+
+            let optContainer = document.getElementById("hsOptions");
+            optContainer.innerHTML = "";
+            q.options.forEach(opt => {
+                let btn = document.createElement("button");
+                btn.className = "w-full text-left p-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs text-slate-200 transition font-medium flex justify-between items-center";
+                btn.innerHTML = `<span><b>HS ${opt.code}</b> - ${opt.name}</span>`;
+                btn.onclick = () => checkHsAnswer(opt, q.options);
+                optContainer.appendChild(btn);
+            });
+        }
+
+        function checkHsAnswer(selectedOpt, allOptions) {
+            let feedback = document.getElementById("hsFeedback");
+            let buttons = document.getElementById("hsOptions").querySelectorAll("button");
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedOpt.correct) {
+                feedback.innerHTML = `<span class="text-emerald-400">✅ 정답입니다! (+20점)</span><br><span class="text-slate-300 font-normal">${selectedOpt.reason}</span>`;
+                hsScore += 20;
+                currentHsIndex++;
+                setTimeout(loadHsQuestion, 2800);
+            } else {
+                let correctOpt = allOptions.find(o => o.correct);
+                feedback.innerHTML = `<span class="text-rose-400">❌ 오답입니다. (정답: HS ${correctOpt.code} - ${correctOpt.name})</span><br><span class="text-slate-300 font-normal">${selectedOpt.reason}</span>`;
+                currentHsIndex++;
+                setTimeout(loadHsQuestion, 3500);
+            }
+        }
+
+        // Memory Game Database with Expanded Pool for Full Randomization
+        const masterMemoryPool = [
+            { name: "🚢 컨테이너선", desc: "국제 해상 운송의 주역으로, 표준화된 규격의 대형 철제 상자(컨테이너)를 대량으로 실어 나르는 대형 화물선입니다." },
+            { name: "📦 보세창고", desc: "관세가 아직 부과되지 않은(보세 상태) 외국 물품을 안전하게 보관, 장치 및 분류하는 특수 허가 구역입니다." },
+            { name: "📜 원산지증명서", desc: "수출입 물품이 어느 나라에서 생산되었는지를 증명하는 공식 서류로, FTA 특혜관세 적용 시 필수 제출됩니다." },
+            { name: "⚖️ 관세저울", desc: "수입 물품의 과세 표준인 중량, 수량 및 과세가격을 공정하게 측정하고 산출하는 무역 통관의 상징입니다." },
+            { name: "🔍 세관검사장", desc: "수출입 화물이 신고 내용과 일치하는지 불법 물품이나 밀수품은 없는지 세관 공무원이 직접 확인하는 검사 구역입니다." },
+            { name: "📑 인보이스 (송장)", desc: "수출자가 수입자에게 대금 청구를 위해 발행하는 상업 송장으로 물품 명세와 가격이 상세히 기재됩니다." },
+            { name: "📋 B/L (선하증권)", desc: "선박회사가 화물을 인수했음을 증명하고 화물의 소유권을 나타내는 유가증권이자 핵심 무역 서류입니다." },
+            { name: "🏷️ HS코드표", desc: "전 세계 모든 무역 물품에 부여되는 10자리 표준 품목분류 코드로 관세율 판정의 기준이 됩니다." }
+        ];
+
+        let currentMemoryStage = 1;
+        let memoryCards = [];
+        let firstCard = null;
+        let secondCard = null;
+        let lockBoard = false;
+        let memoryTriesCount = 0;
+        let memoryPairsRemaining = 0;
+
+        function resetMemoryToMenu() {
+            document.getElementById("memoryStageMenu").classList.remove("hidden");
+            document.getElementById("memoryGamePlayArea").classList.add("hidden");
+            document.getElementById("memoryWinBox").classList.add("hidden");
+            document.getElementById("memoryInfoBox").classList.add("hidden");
+        }
+
+        function startMemoryStage(stage) {
+            currentMemoryStage = stage;
+            document.getElementById("memoryStageDisplay").innerText = `STAGE ${stage}`;
+            document.getElementById("memoryStageMenu").classList.add("hidden");
+            document.getElementById("memoryWinBox").classList.add("hidden");
+            document.getElementById("memoryGamePlayArea").classList.remove("hidden");
+            document.getElementById("memoryInfoBox").classList.add("hidden");
+
+            let pairCount = stage === 1 ? 3 : (stage === 2 ? 4 : 6);
+            
+            // Randomize and select cards from master pool for every new game
+            let shuffledPool = [...masterMemoryPool].sort(() => Math.random() - 0.5);
+            let selectedItems = shuffledPool.slice(0, pairCount);
+
+            memoryCards = [];
+            selectedItems.forEach((item, index) => {
+                memoryCards.push({ id: index, name: item.name, desc: item.desc });
+                memoryCards.push({ id: index, name: item.name, desc: item.desc });
+            });
+
+            // Shuffle card deck randomly
+            memoryCards.sort(() => Math.random() - 0.5);
+
+            memoryTriesCount = 0;
+            memoryPairsRemaining = pairCount;
+            document.getElementById("memoryTries").innerText = memoryTriesCount;
+            document.getElementById("memoryPairsLeft").innerText = memoryPairsRemaining;
+
+            renderMemoryBoard();
+        }
+
+        function renderMemoryBoard() {
+            let container = document.getElementById("memoryGameContainer");
+            container.innerHTML = "";
+            container.className = currentMemoryStage === 3 
+                ? "grid grid-cols-3 sm:grid-cols-4 gap-2.5 max-w-xl mx-auto py-2"
+                : "grid grid-cols-3 sm:grid-cols-4 gap-3 max-w-lg mx-auto py-2";
+
+            memoryCards.forEach((card, index) => {
+                let cardEl = document.createElement("div");
+                cardEl.className = "h-20 sm:h-24 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl flex items-center justify-center cursor-pointer transition transform hover:scale-105 select-none text-center p-2";
+                cardEl.dataset.index = index;
+                cardEl.innerHTML = `<span class="text-xl sm:text-2xl text-slate-500">❓</span>`;
+                cardEl.onclick = () => flipMemoryCard(cardEl, card);
+                container.appendChild(cardEl);
+            });
+        }
+
+        function flipMemoryCard(cardEl, cardData) {
+            if (lockBoard) return;
+            if (cardEl.classList.contains("matched") || cardEl.classList.contains("flipped")) return;
+
+            cardEl.classList.add("flipped", "bg-purple-950/80", "border-purple-500");
+            cardEl.innerHTML = `<span class="text-xs sm:text-sm font-bold text-white">${cardData.name}</span>`;
+
+            if (!firstCard) {
+                firstCard = { element: cardEl, data: cardData };
+            } else {
+                secondCard = { element: cardEl, data: cardData };
+                memoryTriesCount++;
+                document.getElementById("memoryTries").innerText = memoryTriesCount;
+                checkMemoryMatch();
+            }
+        }
+
+        function checkMemoryMatch() {
+            let isMatch = firstCard.data.id === secondCard.data.id;
+
+            if (isMatch) {
+                firstCard.element.classList.add("matched", "border-emerald-500", "bg-emerald-950/50");
+                secondCard.element.classList.add("matched", "border-emerald-500", "bg-emerald-950/50");
+
+                // Show info box for the matched item
+                let infoBox = document.getElementById("memoryInfoBox");
+                document.getElementById("memoryInfoTitle").innerText = `📦 ${firstCard.data.name} 실무 정보`;
+                document.getElementById("memoryInfoDesc").innerText = firstCard.data.desc;
+                infoBox.classList.remove("hidden");
+
+                memoryPairsRemaining--;
+                document.getElementById("memoryPairsLeft").innerText = memoryPairsRemaining;
+
+                resetMemoryTurn();
+
+                if (memoryPairsRemaining === 0) {
+                    setTimeout(() => {
+                        document.getElementById("memoryGamePlayArea").classList.add("hidden");
+                        document.getElementById("memoryWinBox").classList.remove("hidden");
+                        let nextBtn = document.getElementById("nextStageBtn");
+                        if (currentMemoryStage >= 3) {
+                            nextBtn.style.display = "none";
+                            document.getElementById("memoryWinText").innerText = "🎉 모든 무역 메모리 스테이지를 마스터하셨습니다!";
+                        } else {
+                            nextBtn.style.display = "inline-block";
+                            document.getElementById("memoryWinText").innerText = `훌륭합니다! 스테이지 ${currentMemoryStage}를 클리어했습니다.`;
+                        }
+                    }, 600);
+                }
+            } else {
+                lockBoard = true;
+                setTimeout(() => {
+                    firstCard.element.classList.remove("flipped", "bg-purple-950/80", "border-purple-500");
+                    firstCard.element.innerHTML = `<span class="text-xl sm:text-2xl text-slate-500">❓</span>`;
+                    secondCard.element.classList.remove("flipped", "bg-purple-950/80", "border-purple-500");
+                    secondCard.element.innerHTML = `<span class="text-xl sm:text-2xl text-slate-500">❓</span>`;
+                    resetMemoryTurn();
+                }, 900);
+            }
+        }
+
+        function nextMemoryStage() {
+            if (currentMemoryStage < 3) {
+                startMemoryStage(currentMemoryStage + 1);
+            }
+        }
+
+        function closeMemoryInfo() {
+            document.getElementById("memoryInfoBox").classList.add("hidden");
+        }
+
+        function resetMemoryTurn() {
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+        }
+
+        // Night Port Container Minigame Logic with Randomized Cargo Pool
+        const masterCargoPool = [
+            { name: "수입 스마트폰 및 반도체 부품", category: 0, tag: "수입 화물", desc: "인천항 입항 완료 / 관세 및 요건 확인 필요" },
+            { name: "자동차 완성차 수출 물량", category: 1, tag: "수출 화물", desc: "부두 야적장 적재 완료 / 선적 서류 검토" },
+            { name: "공업용 리튬 배터리 (위험물)", category: 2, tag: "특수 위험물", desc: "위험물안전관리법 적용 보세구역 보관" },
+            { name: "해외 직구 의류 및 패션 잡화", category: 0, tag: "수입 화물", desc: "특송물류센터 통관 목록 심사 중" },
+            { name: "친환경 전기차 배터리 셀 수출", category: 1, tag: "수출 화물", desc: "부산항 컨테이너 터미널 반입 완료" },
+            { name: "화장품 원료 및 향수 시약", category: 2, tag: "특수 보세화물", desc: "보세창고 장치 및 성분 검사 대상" },
+            { name: "정밀 의료용 진단기기 수입", category: 0, tag: "수입 화물", desc: "식약처 수입 요건 및 관세 납부 확인" },
+            { name: "첨단 로보틱스 부품 수출", category: 1, tag: "수출 화물", desc: "항공/해상 복합 운송 선적 대기" },
+            { name: "화학 위험물질 시료 (시약)", category: 2, tag: "특수 위험물", desc: "위험물 통관 안전 검사 필수 진행" }
+        ];
+
+        let gameScoreVal = 0;
+        let gameTimerVal = 30;
+        let gameInterval = null;
+        let currentCargo = null;
+        let isGameActive = false;
+
+        function startNightGame() {
+            document.getElementById("gameStartScreen").classList.add("hidden");
+            document.getElementById("gameOverScreen").classList.add("hidden");
+            document.getElementById("gamePlayArea").classList.remove("hidden");
+
+            gameScoreVal = 0;
+            gameTimerVal = 30;
+            isGameActive = true;
+            document.getElementById("gameScore").innerText = gameScoreVal;
+            document.getElementById("gameTimer").innerText = gameTimerVal;
+
+            if (gameInterval) clearInterval(gameInterval);
+            gameInterval = setInterval(() => {
+                gameTimerVal--;
+                document.getElementById("gameTimer").innerText = gameTimerVal;
+                if (gameTimerVal <= 0) {
+                    endNightGame();
+                }
+            }, 1000);
+
+            nextCargoRound();
+        }
+
+        function nextCargoRound() {
+            if (!isGameActive) return;
+            // Pick completely random cargo from master pool each round
+            currentCargo = masterCargoPool[Math.floor(Math.random() * masterCargoPool.length)];
+            
+            document.getElementById("cargoName").innerText = currentCargo.name;
+            document.getElementById("cargoDesc").innerText = currentCargo.desc;
+            let tagEl = document.getElementById("cargoTypeTag");
+            tagEl.innerText = currentCargo.tag;
+        }
+
+        function handleGameChoice(choiceIndex) {
+            if (!isGameActive) return;
+
+            if (choiceIndex === currentCargo.category) {
+                gameScoreVal += 15;
+                document.getElementById("gameScore").innerText = gameScoreVal;
+            } else {
+                gameScoreVal = Math.max(0, gameScoreVal - 5);
+                document.getElementById("gameScore").innerText = gameScoreVal;
+            }
+            nextCargoRound();
+        }
+
+        function endNightGame() {
+            isGameActive = false;
+            clearInterval(gameInterval);
+            document.getElementById("gamePlayArea").classList.add("hidden");
+            document.getElementById("gameOverScreen").classList.remove("hidden");
+            document.getElementById("finalGameScore").innerText = `획득한 항만 실무 포인트: ${gameScoreVal}점`;
+        }
+    </script>
+</body>
+</html>
